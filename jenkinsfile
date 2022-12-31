@@ -12,12 +12,7 @@ pipeline {
             steps {
                 sh 'docker build -t html-server-image:v1 .'
             }
-        }  
-         stage('docker push') {
-            steps {
-                sh 'docker push ${ECRREGISTRY}/${IMAGENAME}:${IMAGE_TAG}'
-            }
-        }                
+        }                 
         
     }
     post {
