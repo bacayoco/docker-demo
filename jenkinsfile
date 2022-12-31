@@ -1,21 +1,29 @@
 pipeline {
     agent any
-
-    options {}
-
-    tools {}
-
-    environment {}
-
+   
     stages {
-        stage('Build & Test') {}
-
-        stage('Build Docker Image') {}
-
-        stage('Push Image to ECR') {}
-
-        stage('Deploy in ECS') {}
+       stage ('Clone') {
+          steps {
+                checkout scm
+            }
+        }
+        
+         stage('docker build and tag') {
+            steps {
+                sh 'docker build -t html-server-image:v1 .'
+            }
+        }  
+         stage('docker push') {
+            steps {
+                sh 'docker push ${ECRREGISTRY}/${IMAGENAME}:${IMAGE_TAG}'
+            }
+        }                
+        
     }
-
-    post {}
+    post {
+        always {
+            junit 'target/surefire-reports/TEST-*.xml'
+            deleteDir()
+        }
+    }
 }
