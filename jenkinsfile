@@ -16,7 +16,7 @@ pipeline {
         
                  stage('docker push') {
             steps {
-                sh 'docker push html-server-imag:latest'
+                sh 'docker push html-server-image:latest'
             }
         } 
         
