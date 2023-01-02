@@ -2,7 +2,7 @@ pipeline {
     agent any
     
    environment {
-        DOCKERCREDENTIAL = credentials('admin')
+        DOCKERHUB_CREDENTIALS = credentials('admin')
     }
 
    
@@ -21,7 +21,7 @@ pipeline {
         
         stage('docker login') {
             steps {
-                sh 'echo $DOCKERCREDENTIAL | docker login -u bacayoco  --password-stdin'
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         } 
         
