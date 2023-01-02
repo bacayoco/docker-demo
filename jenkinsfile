@@ -21,7 +21,7 @@ pipeline {
         
         stage('docker login') {
             steps {
-                sh 'echo $DOCKERCREDENTIAL | docker login -u $DOCKERCREDENTIAL  --password-stdin'
+                sh 'echo ${DOCKERCREDENTIAL}| docker login -u bacayoco  --password-stdin'
             }
         } 
         
