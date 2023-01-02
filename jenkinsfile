@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    
+   environment {
+        DOCKERCREDENTIAL = credentials('admin')
+    }
+
    
     stages {
        stage ('Clone') {
@@ -13,6 +18,13 @@ pipeline {
                 sh 'docker build -t html-server-image:v1 .'
             }
         }     
+        
+        stage('docker login') {
+            steps {
+                sh 'echo $DOCKERCREDENTIAL_PSW | docker login -u $DOCKERCREDENTIAL_USR  --password-stdin'
+            }
+        } 
+        
         
                  stage('docker push') {
             steps {
