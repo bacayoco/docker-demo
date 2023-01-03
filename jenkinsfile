@@ -10,7 +10,7 @@ pipeline {
         
          stage('docker build and tag') {
             steps {
-                sh docker build -t docker-demo .'
+                sh 'docker build -t docker-demo .'
                 sh 'docker tag docker-demo:latest 202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo:latest'
             }
         }     
