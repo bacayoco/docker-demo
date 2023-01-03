@@ -35,8 +35,7 @@ pipeline {
     }
     post {
         always {
-            junit 'target/surefire-reports/TEST-*.xml'
-            deleteDir()
+            sh 'docker logout'
         }
     }
 }
