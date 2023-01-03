@@ -28,7 +28,7 @@ pipeline {
         
                  stage('docker push') {
             steps {
-                sh 'docker push html-server-image:v1'
+                sh 'docker push bacayoco/html-server-image:v1'
             }
         } 
         
