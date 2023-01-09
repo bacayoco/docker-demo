@@ -19,7 +19,7 @@ jobs:
      run: |
         docker build . -t bacayoco/html-server-image:latest
   
-   - name: Push to ECR
+   - name: login to ECR
      id: ecr
      uses: jwalton/gh-ecr-push@v1
      
@@ -27,6 +27,7 @@ jobs:
        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
        region: us-east-1
+   - name: push to ECR
      run: |
-       docker tag docker-demo:latest 202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo:latest
+      docker tag docker-demo:latest 202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo:latest
        docker push 202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo:latest
