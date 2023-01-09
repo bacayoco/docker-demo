@@ -17,7 +17,7 @@ jobs:
 
    - name: docker build
      run: |
-        docker build . -t bacayoco/html-server-image:latest
+        docker build . -t docker-demo:latest
         
    - name: 'Get Login to AWS ECR'
      id: ecr-login
