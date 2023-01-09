@@ -27,4 +27,4 @@ jobs:
        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
        region: us-east-1
-       image: bacayoco/html-server-image:latest1
+       image: bacayoco/html-server-image:latest
