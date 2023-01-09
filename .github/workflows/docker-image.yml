@@ -21,9 +21,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
    - name: docker build
      run: |
-        docker build . -t bacayoco/html-server-image:tagname
+        docker build . -t bacayoco/html-server-image:latest
   
    - name: docker push
      run: |
-      docker push bacayoco/html-server-image:tagname
+      docker push bacayoco/html-server-image:latest
          
