@@ -26,7 +26,7 @@ jobs:
      with:
        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-       aws-region: us-east-1
+       aws-region: ${{ secrets.AWS_REGION }}
    - name: push to ECR
      run: |
       docker tag docker-demo:latest 202082903014.dkr.ecr.us-east-1.amazonaws.com/docker-demo:latest
