@@ -19,8 +19,8 @@ jobs:
      run: |
         docker build . -t bacayoco/html-server-image:latest
   
-   - name: Login to ECR
-     id: ecr
+   - name: Login to Amazon ECR
+     id: login-ecr
      uses: aws-actions/amazon-ecr-login@v1
      
      with:
