@@ -19,7 +19,7 @@ jobs:
      run: |
         docker build . -t bacayoco/html-server-image:latest
   
-   - name: login to ECR
+   - name: Login to ECR
      id: ecr
      uses: jwalton/gh-ecr-push@v1
      
