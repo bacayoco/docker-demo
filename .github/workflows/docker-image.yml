@@ -15,4 +15,7 @@ jobs:
    - name: docker build
      run: |
         docker build . -t bacayoco/html-server-image:tagname
+   - name: want to check ls all images
+     run: |
+      docker images
       
