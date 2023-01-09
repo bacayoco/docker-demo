@@ -25,7 +25,7 @@ jobs:
    - name: want to check ls all images
      run: |
       docker images
-  -
+  
         name: Build and push
         uses: docker/build-push-action@v3
         with:
