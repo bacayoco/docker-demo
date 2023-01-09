@@ -23,10 +23,7 @@ jobs:
      run: |
         docker build . -t bacayoco/html-server-image:tagname
   
-        name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          tags: bacayoco/html-server-image:tagname
-
+   - name: docker push
+     run: |
+      docker push bacayoco/html-server-image:tagname
+         
