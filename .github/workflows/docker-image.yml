@@ -21,7 +21,7 @@ jobs:
   
    - name: Login to ECR
      id: ecr
-     uses: jwalton/gh-ecr-push@v1
+     uses: aws-actions/amazon-ecr-login@v1
      
      with:
        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
